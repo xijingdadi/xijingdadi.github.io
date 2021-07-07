@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孙浩铭的个人空间首页</title>
+    <link href="../css/孙浩铭的个人空间首页.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="top"></div>
+    <div id="inner">
+        <div id="leader">
+            <!-- 导航据布局 -->
+            <ul>
+                <li>
+                    <a href="#" title="首页" >
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/兴趣爱好.html" title="兴趣爱好" >
+                        兴趣爱好
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/神兽空间.html" title="神兽空间" >
+                        神兽空间
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/秘密基地.html" title="秘密基地" style="float: right;">
+                        秘密基地
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="containerA">
+            <div id="containerA-a">
+                <!-- 我设置了一个轮播区域 -->
+                <div class="picture">
+                    <!-- 图片页码 -->
+                    <p class="pg"></p>
+                    <img src="" alt="">
+                    <!-- 小圆点点 -->
+                    <p class="radius"></p>
+                    <!-- 图片的下面标题 -->
+                    <p class="title"></p>
+                    <!-- 左右箭头 -->
+                    <div class="arrowhead-left" id="al">  </div> 
+                    <div class="arrowhead-right" id="ar"> </div>
+                </div>
+                <script>
+                    var address=["../image/1.jpg","../image/2.jpg","../image/3.jpg","../image/1.jpg","../image/2.jpg"]
+                    //  var imgs = document.getElementsByTagName("img");
+                    var imgs = document.querySelector("img");
+                    var len = address.length;               //图片地址的数量为len
+                    var str = "";
+                    var pp = document.getElementsByTagName("p");//获取的是p标签的集合
+                    //  var pp  = document.querySelector("p");    //获取的是一个元素
+                    var al = document.getElementById("al");
+                    var ar = document.getElementById("ar");
+                    var n = 0 ;
+                    //添加span标签（小圆点），个数为len个
+                    for (i = 0; i < len; i++) {
+                        str += ' <span></span>'
+                    }
+                    pp[1].innerHTML = str;
+                    var spans = pp[1].getElementsByTagName('span');  //获取p[1]里所有span标签
+                    spans[0].className = 'active';                  //给第一个span标签添加样式 active
+                    for (i = 0; i < len; i++) {
+                        spans[i].index = i;              //自定义索引值
+                        spans[i].onmouseover = function () {            //鼠标指向圆点时的事件
+                            for (i = 0; i < len; i++) {
+                                spans[i].className = "";               //通过循环，清除所有圆点的类名
+                            }
+                            n=this.index ;
+                            this.className = 'active';                 //给鼠标移入的圆点添加类名
+                            imgs.src = address[this.index];
+                            pp[0].innerHTML = [this.index + 1] + "/6";    
+                            pp[2].innerHTML = "" + [this.index + 1];
+                        }
+                    }
+                    ar.onclick = function () {            //右侧箭头，点击一次图片向右换一张
+                        n++;
+                       if (n>5) {
+                          n=0;  
+                       } 
+                       for (i = 0; i < len; i++) {
+                            spans[i].className = "";
+                        }
+            
+                        spans[n].className = "active";
+                        imgs.src = address[n];
+                        pp[0].innerHTML = (n+1) + "/6";
+                        pp[2].innerHTML = "" +(n+1);
+                      
+                    }
+                    al.onclick = function () {         //左侧箭头，点击一次图片向左换一张
+                      n--;
+                     if (n<0) {
+                         n=(len-1);
+                     }
+                     for (i = 0; i < len; i++) {
+                          spans[i].className = "";
+                      }         
+                      spans[n].className = "active";
+                      imgs.src = address[n];
+                      pp[0].innerHTML = (n+1) + "/6";
+                      pp[2].innerHTML = "" +(n+1);
+                    } 
+                   setInterval(ar.onclick,3000);             //添加定时器  setInterval（函数，间隔时间单位为毫秒）
+                                                             //此次添加的函数为点击右侧箭头，间隔为3秒
+                </script>
+            </div>
+            <!-- 孙浩铭的近期个人新闻 -->
+            <div id="containerA-b">
+                <div id="news_title">
+                    <a href="#">
+                        浩铭快报。doge
+                    </a>
+                </div>
+                <div class="news">
+                            <div class="new n1">
+                                <div class="A">
+                                    <div class="a">2021</div>
+                                    <div class="b">06-01</div>
+                                </div>
+                                <div class="B">
+                                    <a href="#" target="_blank">包饺子！</a>
+                                </div>
+                            </div>
+                            <div class="new n2">
+                                <div class="A">
+                                    <div class="a">2021</div>
+                                    <div class="b">05-29</div>
+                                </div>
+                                <div class="B">
+                                    <a href="#" target="_blank">春节快乐!!!</a>
+                                </div>
+                            </div>
+                            <div class="new n3">
+                                <div class="A">
+                                    <div class="a">2021</div>
+                                    <div class="b">00-00</div>
+                                </div>
+                                <div class="B">
+                                    <a href="#" target="_blank">表哥新婚快乐！！！</a>
+                                </div>
+                            </div>
+                            <div class="new n5">
+                                <div class="A">
+                                    <div class="a">2021</div>
+                                    <div class="b">05-26</div>
+                                </div>
+                                <div class="B">
+                                    <a href="#" target="_blank">一天吃了一顿饭...</a>
+                                </div>
+                            </div>
+                            <div class="new n6">
+                                <div class="A">
+                                    <div class="a">2021</div>
+                                    <div class="b">05-25</div>
+                                </div>
+                                <div class="B">
+                                    <a href="#" target="_blank">一天吃了两顿饭...</a>
+                                </div>
+                            </div>
+                            <div class="new n7">
+                                <div class="A">
+                                    <div class="a">2021</div>
+                                    <div class="b">05-24</div>
+                                </div>
+                                <div class="B">
+                                    <a href="#" target="_blank">一天吃了三顿饭...</a>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <!-- containerB下建立两个表格 -->
+        <div id="containerB">
+            <div id="containerB-a">
+                <p>生活日记</p>
+                <!-- 这里有三个小块放我平时些的一些笔记 -->
+                <ul>
+                   <li>
+                        <div class="note">
+                            <!-- 两个小块构成一个日记图片和文字 -->
+                            <div class="X">
+                                <a href="#">
+                                    <img src="../image/5.jpg">
+                                </a>
+                            </div>
+                            <div class="Y">
+                                <a href="#">
+                                    今天天气真是好，但是我又呆在宿舍没出门。我感觉自己不能再这么颓废下去了。
+                                </a>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="note">
+                            <div class="X">
+                                <a href="#">
+                                    <img src="../image/b.jpg">
+                                </a>
+                            </div>
+                            <div class="Y">
+                                <a href="#">
+                                    今天翻相册找到了曾经的证件照，当时还是短头发呢。
+                                </a>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="note">
+                            <div class="X">
+                                <a href="#">
+                                    <img src="../image/c.jpg">
+                                </a>
+                            </div>
+                            <div class="Y">
+                                <a href="#">
+                                    今天和舍友几个人去老街烧烤搓一顿。今天和舍友几个人去老街烧烤搓一顿。
+                                </a>
+                            </div>
+                        </div>
+                   </li>
+                </ul>
+            </div>
+            <div id="containerB-b">
+                    <!-- 这里，注册表单 -->
+                    <div class="form_con">
+                        <h3>欢迎大家注册哦</h3>
+                            <form action="">
+                                <label for="">尊姓大名：</label>
+                                <input type="text" name="" id="" class="input_text">
+                                <br>
+                                <br>
+                                <label for="">密码：</label>
+                                <input type="password" name="" id="" class="input_text">
+                                <br>
+                                <br>
+                                <label for="">性别：</label>
+                                <input type="radio" name="gender" value="0">男
+                                <input type="radio" name="gender" value="1">女
+                                <br>
+                                <br>
+                                <!-- 多重选择 -->
+                                <label for="">爱好：</label>
+                                <input type="checkbox" name="like" value="0">唱歌
+                                <input type="checkbox" name="like" value="1">跳舞
+                                <input type="checkbox" name="like" value="2">rap
+                                <br>
+                                <br>
+                                <label for="">个人描述</label>
+                                <!-- 这里用textarea建立一个个人描述的模块 -->
+                                <textarea name="baout" id="" cols="30" rows="10" class="input_text2"></textarea>
+                                <br>
+                                <br>
+                                <label for="">籍贯:</label>
+                                <select name="" id="" class="input_select">
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                </select>
+                                <br>
+                                <br>
+                                <input type="submit" value="提交" class="m">
+                                <input type="reset" value="重置">
+                            </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div id="keli">
+           <img src="../image/6.gif">
+        </div>
+        <!-- 求关注栏 -->
+        <div id="guanzhu">
+            <div id="timu">求关注</div>
+            <div id="ruanjian">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../image/x.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/y.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/z.jpg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

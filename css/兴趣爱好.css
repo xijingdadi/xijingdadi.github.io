@@ -1,0 +1,250 @@
+/* 这些都和之前一样 */
+body
+{
+    background-color: #99CCFF;
+}
+ul
+{
+    list-style-type: none;
+}
+div#inner
+{
+    height: 1000px;
+    width: 1000px;
+    background-color: #CCCCCC;
+    margin:0 auto;       /*  设置居中 */
+    border-radius: 30px  ;
+    border: white 3px solid;
+}
+div#top
+{
+    height: 150px;
+    width: 1500px;
+    background-image: url(../image/xinkong.jpg);
+}
+div#inner #leader
+{
+    height: 70px;
+    width: 1000px;
+    background-color: #2b5885;
+    border: white 3px solid;
+    text-align: center;
+    border-radius: 30px   ;
+}
+div#leader li
+{
+    height: 70px;
+    width: 200px;
+    float: left;
+    list-style-type:none;
+}
+div#leader a
+{
+    font-family: 华康海报体W12;
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+}
+/* 声明我导入的那个娃娃字体 */
+@font-face 
+{
+    font-family: '华康海报体W12';
+    src: url(../字体/华康海报体W12.ttf);
+}
+div#containerA
+{
+    height: 400px;
+    width: 1000px;
+    background-color:  #CCCCCC;
+    margin:0 auto;
+    position: relative;
+    border-bottom: white 4px solid;
+}
+div#bottom
+{
+    height: 500px;
+    width: 1000px;
+    margin: 0 auto;
+}
+div#bottom #keli
+{
+    float: left;
+}
+div#guanzhu
+{
+    float: right;
+    margin-left: 30px;
+    height: 500px;
+    width: 280px;
+}
+div#bottom #keli img
+{
+    transform: translateX(20px);
+}
+div#guanzhu #timu
+{
+    text-align: center;
+    height: 50px;
+    width: 280px;
+    font-size: 35px;
+    font-family: 华康海报体W12;
+    color:#336699;
+    transform: translateY(15px);
+}
+div#guanzhu #ruanjian li
+{
+    height: 100px;
+    width: 200px;
+    float: left;
+    margin-left: 50px;
+}
+/* 从这里开始我又建了点新布局 */
+div#containerA-a
+{
+    height: 400px;
+    width: 500px;
+    float: left;
+    transform: translateY(-13px);
+}
+div#containerA-b
+{
+    height: 400px;
+    width: 498px;
+    float: left;
+    border-left: solid white 2px;
+    transform: translateY(-13px);
+}
+.containerA-a-1
+{
+    height: 200px;
+    width: 498px;
+    float: left;
+}
+.containerA-a-2
+{
+    height: 200px;
+    width: 498px;
+    float: left;
+}
+.containerA-a-1-x
+{
+    height: 200px;
+    width: 220px;
+    float: left;
+    /* 图片居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+/* 给图片加个边框 */
+.containerA-a-1-x img
+{
+    border-radius:9px;
+    box-shadow:rgba(0,0,0,0.15) 0 0 8px;
+    background:#FBFBFB;
+    border: 5px solid #ddd;
+}
+.containerA-a-1-y
+{
+    height: 200px;
+    width: 278px;
+    float: left;
+    font-size: 22px;
+    font-family: 华康海报体W12;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    color: #2b5885;
+    /* 设置一下行间距 */
+    line-height: 30px;
+}
+div#leader li
+{
+    height: 70px;
+    width: 200px;
+    float: left;
+    list-style-type:none;
+    transform: scale(1.1); 
+    transition: all 0.6s;
+}
+div#leader li:hover
+{
+    transform: scale(1.2)
+}
+div#bottom img
+{
+    border-radius:3px;
+    box-shadow:rgba(0,0,0,0.15) 0 0 8px;
+    background:#FBFBFB;
+    border:5px solid #ddd;
+}
+.containerA-a-2
+{
+    height: 200px;
+    width: 498px;
+    float: left;
+    font-size: 22px;
+    font-family: 华康海报体W12;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    color: #2b5885;
+    margin-left: 16px;
+    margin-right: 15px;
+    transform: translateX(-5px);    
+    transform: translateY(-10px);
+    line-height: 30px;
+}
+div#containerB-a
+{
+    height: 180px;
+    width: 1000px;
+    margin: 0 auto;
+    float: left;
+}
+img
+{
+    /* 原本的图片的大小，图片原来的大小不变 */
+    transform: scale(1.1); 
+    transition: all 0.6s;
+}
+img:hover
+{
+    transform: scale(1.2)
+}
+div#containerB-b
+{
+    height: 300px;
+    width: 900px;
+   transform: translateX(50px);
+    float: left;
+}
+div#containerB-a .containerB-a-1
+{
+    height: 180px;
+    width: 333px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+div#containerB-a img
+{
+    border-radius:9px;
+    box-shadow:rgba(0,0,0,0.15) 0 0 8px;
+    background:#FBFBFB;
+    border: 5px solid #ddd;
+}
+div#containerB-b
+{
+    font-size: 22px;
+    font-family: 华康海报体W12;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    color: #2b5885;
+    /* 设置一下行间距 */
+    line-height: 30px;
+    margin-left: 5px;
+    
+}
